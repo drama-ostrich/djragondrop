@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+{#    <script src="https://code.jquery.com/jquery-2.1.4.min.js" crossorigin="anonymous"></script>#}
+    <script src="{% static "js/jquery.min.js" %}" ></script>
+    <script src="{% static "js/jquery-ui.min.js" %}" ></script>
+    <script src="{% static "js/bootstrap.min.js" %}" ></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/djragon.css" %}">
+    <link rel="stylesheet" href="{% static "css/component.css" %}">
+
+    {% block extra_css %}{% endblock %}
+    {% block js_vars %}{% endblock %}
+</head>
+<body>
+<header><h1>DjragonDrop</h1><img src="{% static "img/djragonlogo2.svg" %}" class="djragon-logo"></header>
+
+{% block layout %}{% endblock %}
+
+{% block extra_scripts %}{% endblock %}
+
+ <script src="{% static "js/djragon.js" %}" ></script>
+</body>
+</html>

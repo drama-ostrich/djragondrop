@@ -1,0 +1,21 @@
+{% extends "djragon/base.html" %}
+
+{% block layout %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 column-container">
+                {% block column_left %}{% endblock %}
+            </div>
+
+            <div class="col-md-4 column-container column-2 margin-time">
+                {% block column_right %}{% endblock %}
+            </div>
+
+            <div class="col-md-4 column-container column-3">
+                {% block column_righter %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

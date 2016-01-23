@@ -1,0 +1,113 @@
+
+/*
+yellow #ECD078
+brick  #D95B43
+red    #C02942
+purp   #542437
+  dark #421326
+teal   #53777A
+  dark #234C50
+*/
+
+body{
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #384253;
+}
+
+ul, li{
+    list-style: none;
+    padding: 0px;
+    margin:0px;
+    display: block;
+}
+
+header{
+    background-color: #C3D5DD;
+    color: #384253;
+    padding:10px 10px 10px 6%;
+    margin-bottom:40px;
+    position: relative;
+
+}
+.column-container{
+    padding-bottom: 20px;
+    padding-top: 15px;
+    background-color: #C3D5DD;
+    border-radius: 10px;
+    border: white 5px solid;
+}
+.djragon-block{
+    background-color: #F5FAFC;
+    border: 1px solid #C3D5DD;
+    color: #384253;
+    box-shadow: 1px 1px 1px #333;
+    font-weight: 400;
+    font-size:14px;
+    padding:10px 15px;
+}
+.djragon-block:hover{
+    background-color: white;
+}
+
+.djragon-block.drag-over{background-color: white;}
+.djragon-block.drop-over{background-color: white;}
+
+.djragon-block.active{
+    background-color: #76BEDD;
+    color:white;
+
+}
+.column-2 .djragon-block.active {
+    background-color: #76B8B1;
+}
+
+.column-3 .djragon-block.active{
+    background-color: #76B88A;
+}
+.djragon-column{
+    max-height: 500px;
+    overflow: auto;
+    background-color: white;
+}
+.drag-drop-handle{
+    float: right;
+    font-size: 24px;
+    margin: -11px -15px 0px 20px;
+    padding: 8px 7px 8px 7px;
+    cursor: pointer;
+}
+.drag-handle{
+    display: inline-block;
+}
+.ui-state-highlight .drag-handle{
+    display: none;
+}
+.drop-target{
+    display: none;
+    color: white;
+    background-color: #57657a;
+}
+.ui-state-highlight .drop-target{
+    display: inline-block;
+}
+
+.djragon-btn{
+    background-color: #F5FAFC;
+    text-transform: uppercase;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+    border: 1px solid #D8E4EA;
+    border-radius: 6px;
+}
+
+.djragon-btn:hover{
+    background-color: white;
+}
+.djragon-logo{
+    position: absolute;
+    height: 60px;
+    right: 95%;
+    top: 16%;
+}

@@ -1,0 +1,39 @@
+
+{# the model needs to have a .children method #}
+{% if is_paginated %}
+    <span>Reordering disabled, too many items</span>
+{% else %}
+    <button class="djragon-save-order djragon-btn">Save</button>
+{% endif %}
+
+<button class="djangon-open-form djragon-btn pull-right"><i class="glyphicon glyphicon-plus"></i></button>
+<div class="djragon-model-form" style="display: none;">
+    <form class="djragon-form" method="get" action="{% url 'c' model_name %}">
+        {% for f in form %}
+            <div class="form-group">
+            <label>{{ f.label }}</label>
+            {{ f }}
+            </div>
+        {% endfor %}
+        <input type="submit" class="djragon-btn">
+    </form>
+</div>
+
+<ul class="djragon-column"
+    data-post_url="{% url 'model_list' model_name %}"
+    data-model="{{ model_name }}"
+    data-parent-model="{{ parent_model_name }}"
+    data-parent-pk="{{ parent_model_pk }}"
+    data-chlid-model="{{ child_model_name }}">
+
+    {% for object in object_list.all %}
+        <li id="item_{{ object.pk }}" class="draggable djragon-block"
+                data-get_url="{% url 'model_list_ajax' child_model_name %}?parent_pk={{ object.pk }}"
+                data-relate_url="{% url 'relate_child' object.pk 'None' %}"
+                data-pk="{{ object.pk }}">
+            <i class="glyphicon glyphicon-move drag-handle drag-drop-handle"></i>
+            <i class="glyphicon glyphicon-screenshot drop-target drag-drop-handle"></i>
+            <span>{{ object }}</span>
+        </li>
+    {% endfor %}
+</ul>
